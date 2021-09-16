@@ -2,10 +2,12 @@
   "name": "image-processing-api-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
+  "type": "module",
   "scripts": {
-    "start": "npm run prettier && nodemon index.js",
-    "prettier": "npx eslint ."
+    "start": "nodemon src/index.ts",
+    "prettier": "npx eslint src/.",
+    "build": "npx tsc"
   },
   "author": "",
   "license": "ISC",
