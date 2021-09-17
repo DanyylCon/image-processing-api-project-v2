@@ -1,6 +1,8 @@
 import {promises as fs} from 'fs'; 
 
-const readFile = async(path: string) => {
+
+const readFile = async (path: string) => {
+
     try{
         const myFile = await fs.readFile(path);
         return myFile;
@@ -8,5 +10,6 @@ const readFile = async(path: string) => {
         return null;
     }
 }
+
 
 export default readFile;

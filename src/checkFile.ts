@@ -13,8 +13,9 @@ const checkFile = async (req: Request, res: Response, next: NextFunction) => {
 
     const myFile = await readFile(`${thumbDir}${thumbFile}`);
 
+
+
     if(myFile){
-        console.log('sending from file');
         res.sendFile(`${thumbDir}${thumbFile}`);
     }else{
         res.locals.imgObj = {filename: filename, height: height, 
