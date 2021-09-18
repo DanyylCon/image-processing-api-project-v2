@@ -17,8 +17,8 @@ app.get('/images', checkFile, async (req, res) => {
 
         res.sendFile(`${thumbDir}${imgObj.thumbFile}`);  
     }catch (err) {
-        res.send(`Sorry there was an error: ${err}`)
-    }
+        res.send(`Sorry there was an error: ${err}`);
+    };
 });
 
 app.listen(port, () => {
