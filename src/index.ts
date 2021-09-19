@@ -27,12 +27,14 @@ app.get('/', async (req, res) => {
         await transform(`${imgDir}${url.filename}.jpg`, 
                         width, height, `${thumbDir}${filename}`);
     }catch(err){
-        res.send(`Sorry, there was an error --> ${err}`);
+        return res.send(`Sorry, there was an error --> ${err}`);
     }
     res.send(html);
-
+    
 });
 
 app.listen(port, () => {
     console.log(`Server has started on port ${port}`);
 });
+
+export default app;

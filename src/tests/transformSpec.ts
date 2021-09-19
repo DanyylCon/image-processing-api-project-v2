@@ -1,10 +1,11 @@
-import transform from "../transform";
+import transform from '../transform';
+
 const testFilePath = `${process.cwd()}/src/tests/test.jpg`;
 const testWidth = 200;
 const testHeight = 200;
 const testThumbPath = `${process.cwd()}/src/tests/testThumb.jpg`;
 
-describe("Test the transform function to throw or not to throw error based on params",  () => {
+describe('Test the transform function to throw or not to throw error based on params',  () => {
 
     it('expect transform to not throw error with correct path and parameters', async () => {
 
@@ -13,10 +14,10 @@ describe("Test the transform function to throw or not to throw error based on pa
         }).not.toThrow();
 
     });
-    it('expect transform to throw error with incorrect parameters', async () => {
+    it('expect transform to throw error with incorrect parameters', () => {
 
-        const myPromise = new Promise(async (resolve, reject) => {
-            await transform('wrongpath', testWidth, testHeight, testThumbPath);
+        const myPromise = new Promise( (): void => {
+             transform('wrongpath', testWidth, testHeight, testThumbPath);
           });
         expectAsync(myPromise).toBeRejected();     
 
