@@ -5,7 +5,7 @@ import sharp from 'sharp';
 const transform = async (orgPath: string, width: number, 
                         height: number, thumbPath:string): Promise<void> => {
                             
-        await sharp(orgPath).resize(width, height).toFile(thumbPath);
+       await sharp(orgPath).resize(width, height).toFile(thumbPath);
 };
 
 export default transform;

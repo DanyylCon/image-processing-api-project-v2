@@ -5,10 +5,10 @@ const app = express();
 const port = 3000;
 
 //make variables for the directories with original images and for thumbs
-const imgDir = `${process.cwd()}/src/images/`;
-const thumbDir = `${process.cwd()}/src/images/thumbs/`;
+const imgDir = `${__dirname}/images/`;
+const thumbDir = `${__dirname}/images/thumbs/`;
 
-//let built in express middleware in which directory to look for static files
+//let the built in express middleware knowry in which directory to look for static files
 app.use(express.static('src/images', {extensions: ['jpg', 'jpeg'], redirect: false, maxAge: '1d'}));
 
 app.get('/', async (req, res) => {
@@ -27,6 +27,7 @@ app.get('/', async (req, res) => {
         await transform(`${imgDir}${url.filename}.jpg`, 
                         width, height, `${thumbDir}${filename}`);
     }catch(err){
+       
         return res.send(`Sorry, there was an error --> ${err}`);
     }
     res.send(html);
