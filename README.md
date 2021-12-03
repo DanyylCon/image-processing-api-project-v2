@@ -17,10 +17,11 @@ Once the server is running you can use the API by supplying it parameters in the
 "filename=FILENAME&height=HEIGHT&width=WIDTH" where FILENAME is one of the 5 image filenames (encenadaport, 
 fjord, icelandwaterfall, palmtunnel or santamonica), the height and width are numbers which represent the size
 of the transformed image in pixels. An example of the full address and query string in the adress bar of your 
-browser would look like this: "http://localhost:3000/?filename=icelandwaterfall&height=300&width=400"
+browser would look like this: "http://localhost:3000/?filename=icelandwaterfall&height=300&width=400".
 
-Once the image is generated onto the screen, it should appear in the thumbs folder, its' name being the query string. 
-If you try-+
+Once the image is generated onto the screen, it should appear in the thumbs folder, the image name will be the 
+query string with the parameters. If you try processing a request with the same parameters as before, the built
+in express.static middleware will stop the request and load the cached image from the thumbs folder.
 
 
 
