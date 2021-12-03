@@ -19,4 +19,8 @@ fjord, icelandwaterfall, palmtunnel or santamonica), the height and width are nu
 of the transformed image in pixels. An example of the full address and query string in the adress bar of your 
 browser would look like this: "http://localhost:3000/?filename=icelandwaterfall&height=300&width=400"
 
+Once the image is generated onto the screen, it should appear in the thumbs folder, its' name being the query string. 
+If you try-+
+
+
 
