@@ -5,8 +5,8 @@ const app = express();
 const port = 3000;
 
 //make variables for the directories with original images and for thumbs
-const imgDir = `${__dirname}/images/`;
-const thumbDir = `${__dirname}/images/thumbs/`;
+const imgDir = `${process.cwd()}/src/images/`;
+const thumbDir = `${process.cwd()}/src/images/thumbs/`;
 
 //let the built in express middleware knowry in which directory to look for static files
 app.use(
