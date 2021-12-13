@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
     const filename = `filename=${url.filename}&height=${url.height}&width=${url.width}.jpg`;
     const height = parseInt(url.height as string);
     const width = parseInt(url.width as string);
-    const html = `<img src="/thumbs/${filename}"/>`;
+    const html = `<body><img src="/thumbs/${filename}"/></body>`;
 
     //call the transform function to create the thumb image or send the error
     // in the response
