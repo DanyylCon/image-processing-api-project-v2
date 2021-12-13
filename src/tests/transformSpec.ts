@@ -18,7 +18,10 @@ describe('Test the transform function to throw or not to throw error based on pa
     it('expect transform to throw error with incorrect parameters', async () => {
 
         const myPromise = transform('wrongpath', testWidth, testHeight, testThumbPath);
+        
         await expectAsync(myPromise).toBeRejected();    
+
+        
 
     });
 
