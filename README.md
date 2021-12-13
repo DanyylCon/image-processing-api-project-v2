@@ -13,6 +13,7 @@ Run the following commands in the console to make sure formatting, testing and b
 2. npm run lint (this will make sure there are no logical or stylistic erros)
 3. npm run test (this will run the build command for typescript and the test command for jasmine in one line)
 3. npm run start (this will start the your server locally on port 3000 with the index.ts file) OR
+
    npm run startjs (this will start from the index.js file from the build directory)
 
 Once the server is running you can use the API by supplying it parameters in the query string in this format:
