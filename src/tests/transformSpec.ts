@@ -19,6 +19,16 @@ describe('Test the transform function to throw or not to throw error based on pa
             testThumbPath
         );
 
-        await expectAsync(myPromise).toBeRejected();
+        //await expectAsync(myPromise).toBeRejected();
+        
+        expect(function(){myPromise}).toThrowError("Input file is missing");
+        
+        // let errorMessage = 'No error was thrown.';
+        // try{
+        //     await myPromise;
+        // }catch(e: any){
+        //     errorMessage = e.message;
+        // }
+        // expect(errorMessage).toBe('Input file is missing');
     });
 });
