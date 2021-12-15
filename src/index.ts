@@ -1,12 +1,13 @@
 import express from 'express';
 import transform from './transform';
+import path from 'path';
 
 const app = express();
 const port = 3000;
 
 //make variables for the directories with original images and for thumbs
-const imgDir = `${process.cwd()}/src/images/`;
-const thumbDir = `${process.cwd()}/src/images/thumbs/`;
+const imgDir = path.join(`${__dirname}/../src/images/`);
+const thumbDir = path.join(`${__dirname}/../src/images/thumbs/`);
 
 //let the built in express middleware knowry in which directory to look for static files
 app.use(
@@ -29,12 +30,14 @@ app.get('/', async (req, res) => {
     //call the transform function to create the thumb image or send the error
     // in the response
     try {
-        await transform(
-            `${imgDir}${url.filename}.jpg`,
-            width,
-            height,
-            `${thumbDir}${filename}`
-        );
+        if(url.filename !== undefined){    
+            await transform(
+                `${imgDir}${url.filename}.jpg`,
+                width,
+                height,
+                `${thumbDir}${filename}`
+            );
+        }
     } catch (err) {
         return res.send(`Sorry, there was an error --> ${err}`);
     }
