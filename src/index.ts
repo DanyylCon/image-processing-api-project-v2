@@ -3,7 +3,7 @@ import transform from './transform';
 import path from 'path';
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 //make variables for the directories with original images and for thumbs
 const imgDir = path.join(`${__dirname}/../src/images/`);
@@ -30,14 +30,14 @@ app.get('/', async (req, res) => {
     //call the transform function to create the thumb image or send the error
     // in the response
     try {
-        if(url.filename !== undefined){    
-            await transform(
+        //if(url.filename !== undefined){    
+           const func = await transform(
                 `${imgDir}${url.filename}.jpg`,
                 width,
                 height,
                 `${thumbDir}${filename}`
             );
-        }
+       // }
     } catch (err) {
         return res.send(`Sorry, there was an error --> ${err}`);
     }

@@ -15,6 +15,6 @@ describe('Test the transform function', () => {
         // }).not.toThrow();
         expectAsync(transform(testFilePath, testWidth, testHeight, testThumbPath)).not.toBeRejected();
     });
-   afterAll(()=> process.kill(process.pid));
+   //afterAll(()=> process.exit(1));
 });
 

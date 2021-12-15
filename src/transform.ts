@@ -9,11 +9,11 @@ const transform = async (
     height: number,
     thumbPath: string
 ): Promise<void> =>  {
-    try{
+    //try{
         await sharp(orgPath).resize(width, height).toFile(thumbPath);
-    }catch(error){
-       console.log(error);
-    };
+   // }catch(error){
+    //   console.log(error);
+  //  };
 };
 
 export default transform;
