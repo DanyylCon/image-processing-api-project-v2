@@ -8,7 +8,11 @@ const transform = async (
     height: number,
     thumbPath: string
 ): Promise<void> => {
-    await sharp(orgPath).resize(width, height).toFile(thumbPath);
+    try{
+        await sharp(orgPath).resize(width, height).toFile(thumbPath);
+    }catch(error){
+        console.log(error);
+    }
 };
 
 export default transform;
