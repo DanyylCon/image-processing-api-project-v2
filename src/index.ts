@@ -9,7 +9,7 @@ const port = 3001;
 const imgDir = path.join(`${__dirname}/../src/images/`);
 const thumbDir = path.join(`${__dirname}/../src/images/thumbs/`);
 
-//let the built in express middleware knowry in which directory to look for static files
+//let the built in express middleware know in which directory to look for static files
 app.use(
     express.static('src/images', {
         extensions: ['jpg', 'jpeg'],
@@ -30,14 +30,12 @@ app.get('/', async (req, res) => {
     //call the transform function to create the thumb image or send the error
     // in the response
     try {
-        //if(url.filename !== undefined){    
-           const func = await transform(
-                `${imgDir}${url.filename}.jpg`,
-                width,
-                height,
-                `${thumbDir}${filename}`
-            );
-       // }
+        await transform(
+            `${imgDir}${url.filename}.jpg`,
+            width,
+            height,
+            `${thumbDir}${filename}`
+        );
     } catch (err) {
         return res.send(`Sorry, there was an error --> ${err}`);
     }

@@ -12,9 +12,9 @@ Run the following commands in the console to make sure formatting, testing and b
 1. npm run prettier (this will make sure the formatting and styling is correct)
 2. npm run lint (this will make sure there are no logical or stylistic erros)
 3. npm run test (this will run the build command for typescript and the test command for jasmine in one line)
-3. npm run start (this will start the your server locally on port 3000 with the index.ts file) OR
+4. npm run start (this will start the your server locally on port 3000 with the index.ts file) OR
 
-   npm run startjs (this will start from the index.js file from the build directory)
+    npm run startjs (this will start from the index.js file from the build directory)
 
 Once the server is running you can use the API by supplying it parameters in the query string in this format:
 "filename=FILENAME&height=HEIGHT&width=WIDTH" where FILENAME is one of the 5 image filenames (encenadaport,

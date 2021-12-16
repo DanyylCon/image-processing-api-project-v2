@@ -1,4 +1,3 @@
-
 import sharp from 'sharp';
 
 //using the sharp library we transform the image with the
@@ -8,12 +7,8 @@ const transform = async (
     width: number,
     height: number,
     thumbPath: string
-): Promise<void> =>  {
-    //try{
-        await sharp(orgPath).resize(width, height).toFile(thumbPath);
-   // }catch(error){
-    //   console.log(error);
-  //  };
+): Promise<void> => {
+    await sharp(orgPath).resize(width, height).toFile(thumbPath);
 };
 
 export default transform;

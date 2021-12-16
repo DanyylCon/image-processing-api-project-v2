@@ -8,4 +8,3 @@ describe('Test endpoint responses', () => {
         expect(response.statusCode).toBe(200);
     });
 });
-
